@@ -1,0 +1,51 @@
+product_id,name,description,category_id,price,created_at,updated_at
+1,iPhone 13 Pro,Latest Apple smartphone with advanced camera system,8,999.99,2023-01-15T10:30:00,2023-01-15T10:30:00
+2,Samsung Galaxy S21,Flagship Android smartphone with 5G capability,8,899.99,2023-01-20T11:45:00,2023-02-05T09:15:00
+3,MacBook Pro 16",High-performance laptop for professionals,9,2399.99,2023-01-10T14:20:00,2023-01-10T14:20:00
+4,Dell XPS 15,Premium Windows laptop with InfinityEdge display,9,1799.99,2023-01-12T16:30:00,2023-02-10T13:45:00
+5,Sony WH-1000XM4,Wireless noise-cancelling headphones,10,349.99,2023-01-18T09:10:00,2023-01-18T09:10:00
+6,Bose QuietComfort 45,Premium noise-cancelling headphones,10,329.99,2023-01-22T10:05:00,2023-02-15T11:30:00
+7,Canon EOS R5,Full-frame mirrorless camera for professionals,11,3899.99,2023-01-25T13:40:00,2023-01-25T13:40:00
+8,Sony Alpha A7 III,Full-frame mirrorless camera with excellent low-light performance,11,2199.99,2023-01-28T15:20:00,2023-02-18T14:10:00
+9,Apple Watch Series 7,Advanced smartwatch with health monitoring features,12,399.99,2023-02-01T11:15:00,2023-02-01T11:15:00
+10,Fitbit Charge 5,Advanced fitness tracker with built-in GPS,12,179.99,2023-02-05T12:30:00,2023-02-20T10:45:00
+11,Men's Classic Fit Dress Shirt,100% cotton dress shirt for formal occasions,13,59.99,2023-02-08T09:45:00,2023-02-08T09:45:00
+12,Men's Slim Fit Jeans,Comfortable stretch denim jeans,13,79.99,2023-02-10T10:50:00,2023-02-22T15:20:00
+13,Women's Cashmere Sweater,Soft and warm cashmere sweater for winter,14,129.99,2023-02-12T14:15:00,2023-02-12T14:15:00
+14,Women's Yoga Pants,High-waisted yoga pants with pocket,14,49.99,2023-02-15T16:25:00,2023-02-25T11:05:00
+15,Kids' Dinosaur T-Shirt,Fun dinosaur print t-shirt for children,15,24.99,2023-02-18T10:30:00,2023-02-18T10:30:00
+16,Kids' Waterproof Rain Boots,Colorful waterproof boots for rainy days,15,34.99,2023-02-20T11:40:00,2023-03-01T09:30:00
+17,Running Shoes,Lightweight running shoes with cushioned sole,16,119.99,2023-02-22T13:55:00,2023-02-22T13:55:00
+18,Leather Wallet,Genuine leather bifold wallet,17,49.99,2023-02-25T15:10:00,2023-03-05T14:25:00
+19,Stand Mixer,Professional-grade stand mixer for baking,18,349.99,2023-02-28T09:20:00,2023-02-28T09:20:00
+20,Coffee Maker,Programmable coffee maker with thermal carafe,18,129.99,2023-03-02T10:35:00,2023-03-10T16:15:00
+21,Sectional Sofa,Modern L-shaped sectional sofa,19,1299.99,2023-03-05T14:50:00,2023-03-05T14:50:00
+22,Queen Memory Foam Mattress,Medium-firm memory foam mattress,20,799.99,2023-03-08T16:05:00,2023-03-15T10:20:00
+23,Decorative Throw Pillows,Set of 2 decorative throw pillows,21,39.99,2023-03-10T09:30:00,2023-03-10T09:30:00
+24,Non-Stick Cookware Set,10-piece non-stick cookware set,22,199.99,2023-03-12T10:45:00,2023-03-20T13:35:00
+25,Bestselling Novel,Award-winning fiction novel,23,24.99,2023-03-15T13:00:00,2023-03-15T13:00:00
+26,Self-Help Book,Popular self-improvement book,24,19.99,2023-03-18T14:15:00,2023-03-25T15:50:00
+27,Children's Picture Book,Illustrated storybook for young readers,25,14.99,2023-03-20T16:30:00,2023-03-20T16:30:00
+28,College Textbook,University-level textbook,26,149.99,2023-03-22T09:40:00,2023-03-30T11:40:00
+29,Monthly Magazine Subscription,Popular monthly magazine,27,9.99,2023-03-25T10:55:00,2023-03-25T10:55:00
+30,Mountain Bike,All-terrain mountain bike,28,599.99,2023-03-28T14:10:00,2023-04-05T09:25:00
+31,Yoga Mat,Non-slip exercise yoga mat,29,29.99,2023-03-30T15:25:00,2023-03-30T15:25:00
+32,Basketball,Official size basketball,30,39.99,2023-04-02T09:35:00,2023-04-10T14:30:00
+33,Inflatable Paddle Board,Stand-up paddle board with accessories,31,449.99,2023-04-05T10:50:00,2023-04-05T10:50:00
+34,Camping Tent,4-person waterproof camping tent,32,199.99,2023-04-08T13:05:00,2023-04-15T16:45:00
+35,Facial Cleanser,Gentle facial cleanser for all skin types,33,24.99,2023-04-10T14:20:00,2023-04-10T14:20:00
+36,Shampoo and Conditioner Set,Moisturizing hair care set,34,34.99,2023-04-12T16:35:00,2023-04-20T10:15:00
+37,Eyeshadow Palette,Professional eyeshadow palette with 24 colors,35,49.99,2023-04-15T09:45:00,2023-04-15T09:45:00
+38,Perfume,Designer fragrance for women,36,89.99,2023-04-18T11:00:00,2023-04-25T13:20:00
+39,Electric Toothbrush,Rechargeable electric toothbrush,37,79.99,2023-04-20T14:15:00,2023-04-20T14:15:00
+40,Strategy Board Game,Popular strategy board game for families,38,44.99,2023-04-22T15:30:00,2023-04-30T15:05:00
+41,1000-Piece Jigsaw Puzzle,Scenic landscape jigsaw puzzle,39,19.99,2023-04-25T09:50:00,2023-04-25T09:50:00
+42,Superhero Action Figure,Collectible superhero action figure,40,29.99,2023-04-28T11:05:00,2023-05-05T11:55:00
+43,Fashion Doll Set,Fashion doll with accessories,41,34.99,2023-04-30T14:20:00,2023-04-30T14:20:00
+44,STEM Building Kit,Educational building kit for children,42,59.99,2023-05-02T15:35:00,2023-05-10T09:40:00
+45,Wireless Earbuds,True wireless earbuds with charging case,10,129.99,2023-05-05T09:55:00,2023-05-05T09:55:00
+46,Gaming Laptop,High-performance gaming laptop,9,1499.99,2023-05-08T11:10:00,2023-05-15T14:35:00
+47,Smart TV,4K Ultra HD Smart TV,1,799.99,2023-05-10T14:25:00,2023-05-10T14:25:00
+48,Blender,High-speed blender for smoothies,18,89.99,2023-05-12T15:40:00,2023-05-20T16:10:00
+49,Winter Jacket,Insulated winter jacket for extreme cold,13,199.99,2023-05-15T09:00:00,2023-05-15T09:00:00
+50,Hiking Backpack,Durable hiking backpack with hydration system,32,129.99,2023-05-18T10:15:00,2023-05-25T10:30:00

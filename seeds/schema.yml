@@ -1,0 +1,57 @@
+version: 2
+
+seeds:
+  - name: country_codes
+    description: "Reference table for country codes and names"
+    columns:
+      - name: country_code
+        description: "ISO 3166-1 alpha-2 country code"
+        tests:
+          - unique
+          - not_null
+      - name: country_name
+        description: "Country name"
+        tests:
+          - not_null
+      - name: continent
+        description: "Continent name"
+        tests:
+          - not_null
+      - name: region
+        description: "Geographic region"
+        tests:
+          - not_null
+
+  - name: order_status_definitions
+    description: "Order status definitions and flags"
+    columns:
+      - name: status_code
+        description: "Status code used in the system"
+        tests:
+          - unique
+          - not_null
+      - name: status_name
+        description: "Human-readable status name"
+        tests:
+          - not_null
+      - name: status_description
+        description: "Description of the status"
+        tests:
+          - not_null
+      - name: is_cancelled
+        description: "Flag indicating if this status means the order is cancelled"
+        tests:
+          - not_null
+      - name: is_completed
+        description: "Flag indicating if this status means the order is completed"
+        tests:
+          - not_null
+      - name: is_returned
+        description: "Flag indicating if this status means the order is returned"
+        tests:
+          - not_null
+      - name: display_order
+        description: "Order for displaying statuses in UI"
+        tests:
+          - not_null
+          - unique

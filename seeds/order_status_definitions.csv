@@ -1,0 +1,9 @@
+status_code,status_name,status_description,is_cancelled,is_completed,is_returned,display_order
+pending,Pending,Order has been placed but not yet processed,false,false,false,1
+processing,Processing,Order is being processed,false,false,false,2
+shipped,Shipped,Order has been shipped,false,false,false,3
+delivered,Delivered,Order has been delivered,false,true,false,4
+cancelled,Cancelled,Order has been cancelled,true,false,false,5
+returned,Returned,Order has been returned,false,true,true,6
+refunded,Refunded,Order has been refunded,true,true,false,7
+on_hold,On Hold,Order is on hold,false,false,false,8

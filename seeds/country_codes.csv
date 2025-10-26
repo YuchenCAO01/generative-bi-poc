@@ -1,0 +1,17 @@
+country_code,country_name,continent,region
+US,United States,North America,North America
+CA,Canada,North America,North America
+MX,Mexico,North America,Latin America
+GB,United Kingdom,Europe,Western Europe
+DE,Germany,Europe,Western Europe
+FR,France,Europe,Western Europe
+IT,Italy,Europe,Southern Europe
+ES,Spain,Europe,Southern Europe
+JP,Japan,Asia,East Asia
+CN,China,Asia,East Asia
+IN,India,Asia,South Asia
+AU,Australia,Oceania,Oceania
+BR,Brazil,South America,Latin America
+AR,Argentina,South America,Latin America
+ZA,South Africa,Africa,Southern Africa
+NG,Nigeria,Africa,Western Africa

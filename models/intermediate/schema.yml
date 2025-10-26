@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: int_customer_orders
+    description: "Customer order metrics including lifetime value and order counts"
+    columns:
+      - name: customer_id
+        description: "The primary key for customers"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address"
+        tests:
+          - not_null
+      - name: full_name
+        description: "Customer full name"
+      - name: order_count
+        description: "Total number of orders placed by the customer"
+      - name: cancelled_order_count
+        description: "Number of cancelled orders"
+      - name: lifetime_value
+        description: "Total value of all customer orders"
+      - name: average_order_value
+        description: "Average value per order"
+      - name: first_order_date
+        description: "Date of customer's first order"
+      - name: most_recent_order_date
+        description: "Date of customer's most recent order"
+      - name: customer_tenure_days
+        description: "Number of days between first and most recent order"
+      - name: _transformed_at
+        description: "Timestamp when record was transformed"
+
+  - name: int_order_items_detail
+    description: "Detailed order item information with product and order data"
+    columns:
+      - name: order_item_id
+        description: "The primary key for order items"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Foreign key to orders"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Foreign key to products"
+        tests:
+          - not_null
+      - name: order_date
+        description: "Date when order was placed"
+        tests:
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customers"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Current order status"
+        tests:
+          - not_null
+      - name: product_name
+        description: "Product name"
+        tests:
+          - not_null
+      - name: category_id
+        description: "Foreign key to product categories"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Quantity ordered"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Price at time of order"
+        tests:
+          - not_null
+      - name: item_total
+        description: "Total price for this line item (quantity * unit_price)"
+        tests:
+          - not_null
+      - name: is_item_cancelled
+        description: "Flag indicating if the item was cancelled"
+      - name: _transformed_at
+        description: "Timestamp when record was transformed"

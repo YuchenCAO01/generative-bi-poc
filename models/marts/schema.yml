@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: mart_customer_overview
+    description: "Customer overview with order history and website activity"
+    columns:
+      - name: customer_id
+        description: "The primary key for customers"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address"
+        tests:
+          - not_null
+      - name: full_name
+        description: "Customer full name"
+      - name: customer_created_at
+        description: "Timestamp when customer was created"
+      - name: frequency_segment
+        description: "Customer segment based on order frequency (High, Medium, Low, None)"
+      - name: value_segment
+        description: "Customer segment based on lifetime value (High, Medium, Low, None)"
+      - name: order_count
+        description: "Total number of orders placed by the customer"
+      - name: cancelled_order_count
+        description: "Number of cancelled orders"
+      - name: lifetime_value
+        description: "Total value of all customer orders"
+      - name: average_order_value
+        description: "Average value per order"
+      - name: first_order_date
+        description: "Date of customer's first order"
+      - name: most_recent_order_date
+        description: "Date of customer's most recent order"
+      - name: customer_tenure_days
+        description: "Number of days between first and most recent order"
+      - name: is_active_90d
+        description: "Flag indicating if customer has placed an order in the last 90 days"
+      - name: website_session_count
+        description: "Number of website sessions by the customer"
+      - name: page_view_count
+        description: "Number of page views by the customer"
+      - name: product_view_count
+        description: "Number of product views by the customer"
+      - name: add_to_cart_count
+        description: "Number of add to cart events by the customer"
+      - name: cart_to_purchase_rate
+        description: "Ratio of orders to add to cart events"
+      - name: _loaded_at
+        description: "Timestamp when record was loaded"
+
+  - name: mart_sales_overview
+    description: "Sales overview metrics aggregated by date"
+    columns:
+      - name: date_id
+        description: "The primary key (date) for this mart"
+        tests:
+          - not_null
+      - name: calendar_date
+        description: "Calendar date"
+        tests:
+          - not_null
+      - name: year
+        description: "Year"
+      - name: quarter
+        description: "Quarter (1-4)"
+      - name: month
+        description: "Month (1-12)"
+      - name: month_name
+        description: "Month name"
+      - name: day_of_month
+        description: "Day of month (1-31)"
+      - name: order_count
+        description: "Number of orders"
+      - name: total_revenue
+        description: "Total revenue"
+      - name: average_order_value
+        description: "Average order value"
+      - name: total_units_sold
+        description: "Total units sold"
+      - name: unique_products_sold
+        description: "Number of unique products sold"
+      - name: customer_count
+        description: "Number of unique customers"
+      - name: completed_revenue
+        description: "Revenue from completed orders"
+      - name: cancelled_revenue
+        description: "Revenue from cancelled orders"
+      - name: cancellation_rate
+        description: "Ratio of cancelled revenue to total revenue"
+      - name: _loaded_at
+        description: "Timestamp when record was loaded"

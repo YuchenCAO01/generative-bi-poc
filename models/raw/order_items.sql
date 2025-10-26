@@ -1,0 +1,1 @@
+select * from {{ source('gcs_ext', 'order_items_ext') }}

@@ -1,0 +1,8 @@
+#!/bin/bash
+# Copy this file to envsetup.sh and update with your actual API keys and paths
+
+export OPENAI_API_KEY=your-openai-api-key-here
+export DBT_MCP_ENV=/path/to/your/project/.env
+
+# Optional: Custom model name
+export OPENAI_MODEL=gpt-4-mini

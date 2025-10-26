@@ -1,0 +1,48 @@
+# This file should be stored in ~/.dbt/ directory
+# Do not commit this file to version control with credentials
+# Copy this to profiles.yml and update with your actual credentials
+
+ecommerce_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: YOUR_GCP_PROJECT_ID  # Replace with your GCP project ID
+      dataset: ecommerce_analytics_dev
+      threads: 4
+      location: YOUR_LOCATION  # e.g., australia-southeast2
+
+      # If using service account authentication
+      # keyfile: /path/to/keyfile.json
+
+      # If using impersonated service account
+      # impersonate_service_account: service-account@project.iam.gserviceaccount.com
+
+    # prod:
+    #   type: bigquery
+    #   method: oauth  # or service-account
+    #   project: YOUR_GCP_PROJECT_ID  # GCP project ID
+    #   dataset: ecommerce_analytics_prod  # Default BigQuery dataset
+    #   threads: 8  # Number of concurrent connections
+    #   timeout_seconds: 300  # Query timeout
+    #   location: YOUR_LOCATION  # BigQuery dataset location
+    #   priority: interactive  # or batch
+    #   retries: 3  # Number of retries for failed queries
+
+    #   # If using service account authentication
+    #   # keyfile: /path/to/keyfile.json
+
+    #   # If using impersonated service account
+    #   # impersonate_service_account: service-account@project.iam.gserviceaccount.com
+
+    # ci:
+    #   type: bigquery
+    #   method: oauth  # or service-account
+    #   project: YOUR_GCP_PROJECT_ID # GCP project ID
+    #   dataset: ecommerce_analytics_ci  # Default BigQuery dataset
+    #   threads: 4  # Number of concurrent connections
+    #   timeout_seconds: 300  # Query timeout
+    #   location: YOUR_LOCATION  # BigQuery dataset location
+    #   priority: interactive  # or batch
+    #   retries: 3  # Number of retries for failed queries

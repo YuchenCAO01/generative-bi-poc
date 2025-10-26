@@ -1,0 +1,274 @@
+version: 2
+
+models:
+  - name: customers
+    description: "Raw customer information including demographics and account details"
+    config:
+      materialized: table
+    columns:
+      - name: customer_id
+        description: "Primary key for customers"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address"
+        tests:
+          - not_null
+      - name: first_name
+        description: "Customer first name"
+      - name: last_name
+        description: "Customer last name"
+      - name: created_at
+        description: "Timestamp when customer was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when customer was last updated"
+
+  - name: products
+    description: "Raw product catalog information"
+    config:
+      materialized: table
+    columns:
+      - name: product_id
+        description: "Primary key for products"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Product name"
+        tests:
+          - not_null
+      - name: description
+        description: "Product description"
+      - name: category_id
+        description: "Foreign key to product categories"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('product_categories')
+              field: category_id
+      - name: price
+        description: "Current product price"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp when product was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when product was last updated"
+
+  - name: product_categories
+    description: "Raw product category hierarchy"
+    config:
+      materialized: table
+    columns:
+      - name: category_id
+        description: "Primary key for product categories"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Category name"
+        tests:
+          - not_null
+      - name: parent_category_id
+        description: "Self-referential foreign key to parent category"
+        tests:
+          - relationships:
+              to: ref('product_categories')
+              field: category_id
+
+  - name: orders
+    description: "Raw order header information"
+    config:
+      materialized: table
+    columns:
+      - name: order_id
+        description: "Primary key for orders"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customers"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+      - name: order_date
+        description: "Date when order was placed"
+        tests:
+          - not_null
+      - name: status
+        description: "Current order status"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled', 'returned']
+      - name: total_amount
+        description: "Total order amount"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp when order was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when order was last updated"
+
+  - name: order_items
+    description: "Raw order line items"
+    config:
+      materialized: table
+    columns:
+      - name: order_item_id
+        description: "Primary key for order items"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Foreign key to orders"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('orders')
+              field: order_id
+      - name: product_id
+        description: "Foreign key to products"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('products')
+              field: product_id
+      - name: quantity
+        description: "Quantity ordered"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Price at time of order"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp when order item was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when order item was last updated"
+
+  - name: inventory
+    description: "Raw product inventory levels"
+    config:
+      materialized: table
+    columns:
+      - name: inventory_id
+        description: "Primary key for inventory records"
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "Foreign key to products"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('products')
+              field: product_id
+      - name: warehouse_id
+        description: "Foreign key to warehouses"
+        tests:
+          - not_null
+      - name: quantity_on_hand
+        description: "Current inventory quantity"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp when inventory record was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when inventory record was last updated"
+
+  - name: marketing_campaigns
+    description: "Raw marketing campaign information"
+    config:
+      materialized: table
+    columns:
+      - name: campaign_id
+        description: "Primary key for marketing campaigns"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Campaign name"
+        tests:
+          - not_null
+      - name: type
+        description: "Campaign type"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['email', 'social', 'search', 'display', 'affiliate']
+      - name: start_date
+        description: "Campaign start date"
+        tests:
+          - not_null
+      - name: end_date
+        description: "Campaign end date"
+      - name: budget
+        description: "Campaign budget"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp when campaign was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when campaign was last updated"
+
+  - name: website_events
+    description: "Raw website user interaction events"
+    config:
+      materialized: table
+    columns:
+      - name: event_id
+        description: "Primary key for website events"
+        tests:
+          - unique
+          - not_null
+      - name: session_id
+        description: "Website session identifier"
+        tests:
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customers (null for anonymous users)"
+        tests:
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+      - name: event_type
+        description: "Type of website event"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['page_view', 'product_view', 'add_to_cart', 'remove_from_cart', 'checkout', 'purchase']
+      - name: product_id
+        description: "Foreign key to products (for product-related events)"
+        tests:
+          - relationships:
+              to: ref('products')
+              field: product_id
+      - name: page_url
+        description: "URL of the page where the event occurred"
+        tests:
+          - not_null
+      - name: device_type
+        description: "Type of device used"
+        tests:
+          - accepted_values:
+              values: ['desktop', 'mobile', 'tablet']
+      - name: created_at
+        description: "Timestamp when event occurred"
+        tests:
+          - not_null

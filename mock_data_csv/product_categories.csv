@@ -1,0 +1,43 @@
+category_id,name,parent_category_id
+1,Electronics,
+2,Clothing,
+3,Home & Kitchen,
+4,Books,
+5,Sports & Outdoors,
+6,Beauty & Personal Care,
+7,Toys & Games,
+8,Smartphones,1
+9,Laptops,1
+10,Audio,1
+11,Cameras,1
+12,Wearables,1
+13,Men's Clothing,2
+14,Women's Clothing,2
+15,Kids' Clothing,2
+16,Shoes,2
+17,Accessories,2
+18,Kitchen Appliances,3
+19,Furniture,3
+20,Bedding,3
+21,Home Decor,3
+22,Cookware,3
+23,Fiction,4
+24,Non-Fiction,4
+25,Children's Books,4
+26,Textbooks,4
+27,Magazines,4
+28,Outdoor Recreation,5
+29,Exercise & Fitness,5
+30,Team Sports,5
+31,Water Sports,5
+32,Camping & Hiking,5
+33,Skincare,6
+34,Haircare,6
+35,Makeup,6
+36,Fragrance,6
+37,Personal Care,6
+38,Board Games,7
+39,Puzzles,7
+40,Action Figures,7
+41,Dolls,7
+42,Educational Toys,7

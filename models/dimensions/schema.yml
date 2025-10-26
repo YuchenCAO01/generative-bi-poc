@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension with attributes and metrics"
+    columns:
+      - name: customer_id
+        description: "The primary key for the customer dimension"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address"
+        tests:
+          - not_null
+      - name: first_name
+        description: "Customer first name"
+      - name: last_name
+        description: "Customer last name"
+      - name: full_name
+        description: "Customer full name (first_name + last_name)"
+      - name: frequency_segment
+        description: "Customer segment based on order frequency (High, Medium, Low, None)"
+      - name: value_segment
+        description: "Customer segment based on lifetime value (High, Medium, Low, None)"
+      - name: order_count
+        description: "Total number of orders placed by the customer"
+      - name: cancelled_order_count
+        description: "Number of cancelled orders"
+      - name: lifetime_value
+        description: "Total value of all customer orders"
+      - name: average_order_value
+        description: "Average value per order"
+      - name: first_order_date
+        description: "Date of customer's first order"
+      - name: most_recent_order_date
+        description: "Date of customer's most recent order"
+      - name: customer_tenure_days
+        description: "Number of days between first and most recent order"
+      - name: is_active_90d
+        description: "Flag indicating if customer has placed an order in the last 90 days"
+      - name: created_at
+        description: "Timestamp when customer was created"
+      - name: updated_at
+        description: "Timestamp when customer was last updated"
+      - name: _loaded_at
+        description: "Timestamp when record was loaded"
+
+  - name: dim_products
+    description: "Product dimension with attributes and category information"
+    columns:
+      - name: product_id
+        description: "The primary key for the product dimension"
+        tests:
+          - unique
+          - not_null
+      - name: category_id
+        description: "Foreign key to product categories"
+        tests:
+          - not_null
+      - name: product_name
+        description: "Product name"
+        tests:
+          - not_null
+      - name: product_description
+        description: "Product description"
+      - name: price
+        description: "Current product price"
+        tests:
+          - not_null
+      - name: category_name
+        description: "Category name"
+      - name: parent_category_id
+        description: "Self-referential foreign key to parent category"
+      - name: created_at
+        description: "Timestamp when product was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Timestamp when product was last updated"
+      - name: _loaded_at
+        description: "Timestamp when record was loaded"

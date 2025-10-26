@@ -1,0 +1,74 @@
+version: 2
+
+sources:
+  - name: gcs_ext
+    description: "External tables backed by GCS CSVs"
+    database: learn-big-query-420507
+    loader: gcloud storage
+
+    tables:
+      - name: customers_ext
+        description: "Customers (external CSV)"
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/customers.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: products_ext
+        description: "Products (external CSV)"
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/products.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: product_categories_ext
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/product_categories.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: orders_ext
+        description: "Orders header (external CSV)"
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/orders.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: order_items_ext
+        description: "Order line items (external CSV)"
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/order_items.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: inventory_ext
+        description: "Inventory (external CSV)"
+        loaded_at_field: created_at
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/inventory.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: marketing_campaigns_ext
+        description: "Marketing campaigns (external CSV)"
+        loaded_at_field: start_date
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/marketing_campaigns.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+
+      - name: website_events_ext
+        description: "Website events (external CSV)"
+        external:
+          location: "gs://learn_bq_lake-1/dbt-mcp-lake-souce/mock_data_csv/website_events.csv"
+          options:
+            format: CSV
+            skip_leading_rows: 1
+

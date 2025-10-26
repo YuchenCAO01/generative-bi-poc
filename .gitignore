@@ -1,0 +1,38 @@
+# Python virtual environment
+.venv
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# User-specific configuration
+.user.yml
+*.user.yml
+profiles.yml
+envsetup.sh
+
+# DBT
+target/
+dbt_packages/
+logs/
+dbt_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled files
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
