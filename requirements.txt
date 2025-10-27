@@ -1,0 +1,25 @@
+# DBT Core and BigQuery adapter
+dbt-core>=1.7.0
+dbt-bigquery>=1.7.0
+
+# Google Cloud dependencies (for BigQuery authentication)
+google-cloud-bigquery>=3.11.0
+google-auth>=2.22.0
+
+# Additional utilities
+python-dotenv>=1.0.0
+
+# MCP (Model Context Protocol) SDK for client integration
+mcp>=1.0.0
+
+# LangChain and AI dependencies for agent functionality
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+openai>=1.0.0
+
+# Streamlit for web interface
+streamlit>=1.30.0
+
+# Optional: Additional AI/MCP dependencies
+# pydantic-ai>=0.0.1

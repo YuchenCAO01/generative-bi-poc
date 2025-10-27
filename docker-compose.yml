@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  dbt-bigquery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dbt-bigquery
+
+    # Environment variables
+    environment:
+      # Google Cloud / BigQuery Configuration
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/google-credentials.json
+
+      # DBT project configuration
+      - DBT_PROJECT_DIR=/app
+      - DBT_PROFILES_DIR=/root/.dbt
+
+      # Optional: BigQuery specific settings
+      - GCP_PROJECT=${GCP_PROJECT:-your-gcp-project-id}
+      - BIGQUERY_DATASET=${BIGQUERY_DATASET:-ecommerce_analytics_dev}
+
+    # Mount volumes - only secrets and profiles (everything else is copied in Dockerfile)
+    volumes:
+      # ⭐ Secret: Google Cloud credentials
+      - ./credentials/google-credentials.json:/app/credentials/google-credentials.json:ro
+
+      # ⭐ Config: DBT profiles (Docker-specific version with service account auth)
+      - ./profiles.docker.yml:/root/.dbt/profiles.yml:ro
+
+    # Interactive mode for CLI
+    stdin_open: true
+    tty: true
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
