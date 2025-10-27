@@ -8,10 +8,15 @@ env/
 .env.*
 !.env.example
 
+# Google Cloud credentials
+credentials/*.json
+!credentials/.gitkeep
+
 # User-specific configuration
 .user.yml
 *.user.yml
 profiles.yml
+!profiles.docker.yml
 envsetup.sh
 
 # DBT

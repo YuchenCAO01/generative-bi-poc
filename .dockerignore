@@ -1,0 +1,65 @@
+# Python virtual environment
+.venv
+venv/
+env/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files (will be mounted via volume)
+.env
+.env.*
+!.env.example
+
+# DBT artifacts (will be created in container)
+target/
+dbt_packages/
+logs/
+dbt_modules/
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+*.md
+!models/**/*.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Local development files
+setup.sh
+*.local
+*.user.yml
+
+# Test files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.log
+*.tmp
+*.bak
