@@ -33,11 +33,7 @@ models:
     +persist_docs:
       relation: true
       columns: true
-    
-    staging:
-      +materialized: view
-      +schema: staging
-    
+
     intermediate:
       +materialized: view
       +schema: intermediate
@@ -61,18 +57,10 @@ seeds:
     +schema: reference_data
     +quote_columns: true
 
-# Configuring snapshots
-snapshots:
-  ecommerce_analytics:
-    +target_schema: snapshots
-    +strategy: timestamp
-    +updated_at: updated_at
-    +unique_key: id
 
 # Configuring tests
 tests:
-  +store_failures: true
-  +schema: test_failures
+  +store_failures: false
 
 # BigQuery specific configurations
 vars:

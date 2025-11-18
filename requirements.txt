@@ -13,13 +13,15 @@ python-dotenv>=1.0.0
 mcp>=1.0.0
 
 # LangChain and AI dependencies for agent functionality
-langchain>=0.3.0
-langchain-openai>=0.2.0
-langchain-core>=0.3.0
 openai>=1.0.0
+langgraph>=1.0.0
+langchain-core>=0.3.70
+langchain>=0.3.10
+langchain-openai>=0.2.13
 
 # Streamlit for web interface
 streamlit>=1.30.0
 
 # Optional: Additional AI/MCP dependencies
-# pydantic-ai>=0.0.1
+pydantic-ai>=0.0.1
+pydantic

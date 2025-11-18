@@ -6,7 +6,11 @@ Validates the connection to DBT MCP Server and tests basic functionality.
 
 import asyncio
 import sys
+from pathlib import Path
 from typing import Any
+
+# Add parent directory to path to allow imports when running as script
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from agents.mcp_client import get_mcp_client, close_global_client
 

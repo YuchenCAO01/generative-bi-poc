@@ -11,3 +11,5 @@ packages:
 
   - package: dbt-labs/dbt_external_tables
     version: 0.11.0
+    
+  - git: "https://github.com/sfu-db/dbt-lineagex.git"

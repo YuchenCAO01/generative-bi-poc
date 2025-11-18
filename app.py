@@ -88,7 +88,7 @@ with st.sidebar:
             # Call Agent to get response
             with st.spinner("🤔 Thinking..."):
                 try:
-                    response = ask_agent(question)
+                    response = ask_agent(question, st.session_state.messages)
 
                     # Add assistant response
                     st.session_state.messages.append({
@@ -178,7 +178,7 @@ if prompt := st.chat_input("Ask me about data tables..."):
         with st.spinner("🤔 Thinking..."):
             try:
                 # Call Agent
-                response = ask_agent(prompt)
+                response = ask_agent(prompt, st.session_state.messages)
 
                 # Display response
                 st.markdown(response)

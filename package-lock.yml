@@ -11,7 +11,10 @@ packages:
   - name: dbt_external_tables
     package: dbt-labs/dbt_external_tables
     version: 0.11.0
+  - git: https://github.com/sfu-db/dbt-lineagex.git
+    name: lineagex
+    revision: b2d2d9f4f73464c722a1419d6faa15a8f8a312e7
   - name: dbt_date
     package: calogica/dbt_date
     version: 0.7.2
-sha1_hash: 44d4fafd2ca03bd4d5e1a7cf0eb4b8922fa66fd4
+sha1_hash: 509c6cd215025e7c69818c702fdbe66c8f18d2b8
