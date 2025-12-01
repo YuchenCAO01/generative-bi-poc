@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbt-mcp-server"
+version = "0.1.0"
+description = "GenBI POC - DBT MCP & LangChain Integration using DBT MCP Server, LangChain, and Streamlit."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [
+  { name = "GenBI POC" }
+]
+keywords = ["dbt", "mcp", "langchain", "streamlit", "bigquery"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "License :: Other/Proprietary License",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+  "Topic :: Database",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+  # DBT Core and BigQuery adapter
+  "dbt-core>=1.7.0",
+  "dbt-bigquery>=1.7.0",
+
+  # Google Cloud dependencies (for BigQuery authentication)
+  "google-cloud-bigquery>=3.11.0",
+  "google-auth>=2.22.0",
+
+  # Additional utilities
+  "python-dotenv>=1.0.0",
+
+  # MCP (Model Context Protocol) SDK for client integration
+  "mcp>=1.0.0",
+
+  # LangChain and AI dependencies for agent functionality
+  "openai>=1.0.0",
+  "langgraph>=1.0.0",
+  "langchain-core>=0.3.70",
+  "langchain>=0.3.10",
+  "langchain-openai>=0.2.13",
+
+  # Streamlit for web interface
+  "streamlit>=1.30.0",
+
+  # Optional: Additional AI/MCP dependencies
+  "pydantic-ai>=0.0.1",
+  "pydantic",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0.0",
+]
+
+[project.urls]
+Homepage = "https://example.com/dbt-mcp-server"
+Repository = "https://example.com/dbt-mcp-server.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agents*"]
+

@@ -31,6 +31,14 @@ This POC demonstrates how the Model Context Protocol (MCP) can bridge data tools
 
 ### Installation
 
+This project now uses `pyproject.toml` for dependency management. You can install it in editable mode for local development:
+
+```bash
+uv pip install -e .
+# or
+pip install -e .
+```
+
 #### Option 1: Docker (Recommended)
 
 ```bash
@@ -55,15 +63,17 @@ docker-compose up -d
 git clone <your-repo-url>
 cd DBT-MCP-Server
 
-# Run automated setup
-chmod +x setup.sh
-./setup.sh
+# (Optional) Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Install project dependencies (editable mode)
+uv pip install -e .
+# or
+pip install -e .
 
 # Set OpenAI API key
 export OPENAI_API_KEY="sk-your-key-here"
-
-# Activate virtual environment
-source .venv/bin/activate
 ```
 
 ### Running the Application
